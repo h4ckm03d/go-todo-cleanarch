@@ -6,6 +6,7 @@ import (
 
 	"github.com/go-rel/rel"
 	"github.com/go-rel/rel/reltest"
+	"github.com/go-rel/rel/where"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -19,9 +20,7 @@ func TestGet(t *testing.T) {
 		todo       Todo
 	)
 
-	repository.ExpectFind(
-		rel.Select().Where(rel.Eq("id", id)),
-	).Result(result)
+	repository.ExpectFind(where.Eq("id", id)).Result(result)
 
 	assert.NotPanics(t, func() {
 		err := service.Get(ctx, &todo, id)
@@ -38,15 +37,15 @@ func TestGetErr(t *testing.T) {
 		repository      = reltest.New()
 		service         = New(repository, nil)
 		id         uint = 1
-		todo       Todo
+		todo       *Todo
 	)
 
 	repository.ExpectFind(
-		rel.Select().Where(rel.Eq("id", id)),
+		where.Eq("id", id),
 	).Error(rel.ErrNotFound)
 
 	assert.NotPanics(t, func() {
-		err := service.Get(ctx, &todo, id)
+		err := service.Get(ctx, todo, id)
 		assert.Equal(t, rel.ErrNotFound, err)
 		assert.Nil(t, todo)
 	})
