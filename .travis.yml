@@ -2,7 +2,9 @@ language: go
 go:
   - "1.14.x"
 env:
-  - COVER=-coverprofile=c.out
+  global:
+   - COVER=-coverprofile=c.out
+   - COVERAGE_FILE=c.out
 script:
   - go test -race $COVER ./...
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
