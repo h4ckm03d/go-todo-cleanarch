@@ -6,7 +6,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ce812254a495e287b45d/maintainability)](https://codeclimate.com/github/h4ckm03d/go-todo-cleanarch/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ce812254a495e287b45d/test_coverage)](https://codeclimate.com/github/h4ckm03d/go-todo-cleanarch/test_coverage)
 
-Go Todo Clean Arch Example Using Modular Project Layout for Product Microservice. It's suitable as starting point for a medium to larger project. It's originally fork from https://github.com/h4ckm03d/go-todo-cleanarch
+Go Todo Clean Arch Example Using Modular Project Layout for Product Microservice. It's suitable as starting point for a medium to larger project. It's originally fork from https://github.com/Fs02/go-todo-backend
 
 This example uses [Chi](https://github.com/go-chi/chi) for http router and [REL](https://github.com/go-rel/rel) for database access.
 
