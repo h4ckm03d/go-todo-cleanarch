@@ -1,7 +1,7 @@
 # go-todo-cleanarch
 
 [![GoDoc](https://godoc.org/github.com/h4ckm03d/go-todo-cleanarch?status.svg)](https://godoc.org/github.com/h4ckm03d/go-todo-cleanarch)
-[![Build Status](https://travis-ci.com/h4ckm03d/go-todo-cleanarch.svg?branch=master)](https://travis-ci.com/h4ckm03d/go-todo-cleanarch)
+[![Build Status](https://travis-ci.org/h4ckm03d/go-todo-cleanarch.svg?branch=main)](https://travis-ci.org/h4ckm03d/go-todo-cleanarch)
 [![Go Report Card](https://goreportcard.com/badge/github.com/h4ckm03d/go-todo-cleanarch)](https://goreportcard.com/report/github.com/h4ckm03d/go-todo-cleanarch)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ce812254a495e287b45d/maintainability)](https://codeclimate.com/github/h4ckm03d/go-todo-cleanarch/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ce812254a495e287b45d/test_coverage)](https://codeclimate.com/github/h4ckm03d/go-todo-cleanarch/test_coverage)
