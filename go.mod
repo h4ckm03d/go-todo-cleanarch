@@ -4,9 +4,9 @@ go 1.14
 
 require (
 	github.com/go-chi/chi v3.3.2+incompatible
-	github.com/go-rel/rel v0.9.0
+	github.com/go-rel/rel v0.9.1
 	github.com/goware/cors v1.1.1
-	github.com/lib/pq v1.8.0
+	github.com/mattn/go-sqlite3 v1.14.3
 	github.com/stretchr/testify v1.6.1
 	go.uber.org/zap v1.15.0
 	golang.org/x/lint v0.0.0-20200302205851-738671d3881b // indirect

@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 	"os"
 	"os/signal"
@@ -11,9 +10,9 @@ import (
 	"time"
 
 	"github.com/go-rel/rel"
-	"github.com/go-rel/rel/adapter/postgres"
+	"github.com/go-rel/rel/adapter/sqlite3"
 	"github.com/h4ckm03d/go-todo-cleanarch/api"
-	_ "github.com/lib/pq"
+	_ "github.com/mattn/go-sqlite3"
 	"go.uber.org/zap"
 )
 
@@ -48,15 +47,16 @@ func main() {
 func initRepository() rel.Repository {
 	var (
 		logger, _ = zap.NewProduction(zap.Fields(zap.String("type", "repository")))
-		dsn       = fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable",
-			os.Getenv("POSTGRESQL_USERNAME"),
-			os.Getenv("POSTGRESQL_PASSWORD"),
-			os.Getenv("POSTGRESQL_HOST"),
-			os.Getenv("POSTGRESQL_PORT"),
-			os.Getenv("POSTGRESQL_DATABASE"))
+		// dsn       = fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable",
+		// 	os.Getenv("POSTGRESQL_USERNAME"),
+		// 	os.Getenv("POSTGRESQL_PASSWORD"),
+		// 	os.Getenv("POSTGRESQL_HOST"),
+		// 	os.Getenv("POSTGRESQL_PORT"),
+		// 	os.Getenv("POSTGRESQL_DATABASE"))
+		dsn = "./rel_test.db?_foreign_keys=1&_loc=Local"
 	)
 
-	adapter, err := postgres.Open(dsn)
+	adapter, err := sqlite3.Open(dsn)
 	if err != nil {
 		logger.Fatal(err.Error(), zap.Error(err))
 	}

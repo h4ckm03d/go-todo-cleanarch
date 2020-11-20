@@ -32,7 +32,7 @@ Feature:
 2. Create a database and update `.env`.
 2. Prepare database schema.
     ```
-    make migrate
+    rel migrate -adapter=github.com/go-rel/rel/adapter/sqlite3 -driver=github.com/mattn/go-sqlite3 -dsn="./rel_test.db?_foreign_keys=1&_loc=Local"
     ```
 3. Build and Running
     ```

@@ -22,7 +22,6 @@ func NewMux(repository rel.Repository) *chi.Mux {
 	)
 
 	healthzHandler.Add("database", repository)
-
 	mux.Use(chimid.RequestID)
 	mux.Use(chimid.RealIP)
 	mux.Use(chimid.Recoverer)
