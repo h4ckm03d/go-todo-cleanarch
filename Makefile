@@ -4,8 +4,10 @@ export DEPLOY			?= api
 export GO111MODULLE     ?= on
 
 all: build start
+db-migrate:
+	rel migrate
 db-rollback:
-	export $$(cat .env | grep -v ^\# | xargs) && go run cmd/db/main.go rollback
+	rel rollback
 gen:
 	go generate ./...
 build: gen
