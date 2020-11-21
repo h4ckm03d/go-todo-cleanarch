@@ -22,6 +22,7 @@ Feature:
 ### Prerequisite
 
 1. Install [mockery](https://github.com/vektra/mockery#installation) for interface mock generation.
+2. Install [rel cli](https://go-rel.github.io/migration/#running-migration) for database migration.
 
 ### Running
 
